@@ -19,8 +19,14 @@ function startExtension(gmail) {
     gmail.observe.on("load", () => {
         const userEmail = gmail.get.user_email();
         console.log("Hello, " + userEmail + ". This is your extension talking!");
+        console.log("Unread Inbox Emails: " + gmail.get.unread_inbox_emails())
+        const messagesOnscreen = gmail.dom.visible_messages()
 
-        generateSummary("test test test test test")
+        for (const [key, value] of Object.entries(messagesOnscreen)){
+          console.log(value["summary"])
+        }
+
+        console.log(gmail.dom.visible_messages())
 
         gmail.observe.on("view_email", (domEmail) => {
             console.log("Looking at email:", domEmail);

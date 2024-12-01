@@ -1,13 +1,13 @@
 {
     "manifest_version": 3,
-    "name": "GmailJS Node Boilerplate Extension",
-    "short_name": "gmailjsnode",
-    "version": "1.1",
-    "author": "Jostein Kjønigsen <jostein@kjonigsen.net>",
+    "name": "Crystal_v3",
+    "short_name": "Crystal",
+    "version": "0.1",
+    "author": "Riley Roberts <syanification@gmail.com>",
 
     "description": "A minimal extension which demonstrates how to create a extension with Gmail.JS and NodeJS-based bundling.",
     "trial_tokens": [
-    "AqHRuLB3gg8G9Nq2Tk+GAzR9TZ6IQZmht9J74JblDOObFXPkeg80bOhyrJOn+vta4IguX/MpnjJJZ/MNc5d0cAkAAABzeyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8va2VmZWVpZ2Fubm9vZ2RhZG1ubWViY2ltbm9uaG9sYmoiLCJmZWF0dXJlIjoiQUlTdW1tYXJpemF0aW9uQVBJIiwiZXhwaXJ5IjoxNzUzMTQyNDAwfQ=="
+    "At0F5YUbwQ8HfXYQLsW3HvYi4U3HvnHBBVZ56ZA/HB5Mp9A3Qckk2+dHnR0FYO/kEDQMt9Qa2f3uFaRdPyzBnwMAAABzeyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8va2VsaGRka2lrbmtjZGpqa2ZiZ2pmZmVhZGVpYm5mYm0iLCJmZWF0dXJlIjoiQUlTdW1tYXJpemF0aW9uQVBJIiwiZXhwaXJ5IjoxNzUzMTQyNDAwfQ=="
     ],
     "permissions": ["tabs", "scripting", "sidePanel", "storage"],
     "content_scripts": [
