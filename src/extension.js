@@ -19,11 +19,29 @@ function startExtension(gmail) {
     gmail.observe.on("load", () => {
         const userEmail = gmail.get.user_email();
         console.log("Hello, " + userEmail + ". This is your extension talking!");
-        console.log("Unread Inbox Emails: " + gmail.get.unread_inbox_emails())
-        const messagesOnscreen = gmail.dom.visible_messages()
+        console.log("Unread Inbox Emails: " + gmail.get.unread_inbox_emails());
+        var messagesOnscreen = gmail.dom.visible_messages();
 
         for (const [key, value] of Object.entries(messagesOnscreen)){
-          console.log(value["summary"])
+          console.log(value["summary"]);
+          var TID = value["thread_id"];
+          console.log(gmail.new.get.thread_data(TID));
+
+          var threadContent = gmail.new.get.thread_data(TID);
+          var htmlContent = threadContent["emails"][threadContent["emails"].length - 1]["content_html"];
+
+          // Create a new div element
+          var tempDivElement = document.createElement("div");
+
+          // Set the HTML content with the given value
+          tempDivElement.innerHTML = htmlContent;
+
+          // Retrieve the text property of the element 
+          var rawText = tempDivElement.textContent || tempDivElement.innerText || "";
+          rawText = rawText.trim()
+
+          var cleanedText = rawText.replace(/(\n\s*){2,}/g, '\n\n');
+          console.log(cleanedText);
         }
 
         console.log(gmail.dom.visible_messages())
@@ -39,8 +57,6 @@ function startExtension(gmail) {
         });
     });
 }
-
-
 
 function canBeParsed(document) {
   return isProbablyReaderable(document, {
