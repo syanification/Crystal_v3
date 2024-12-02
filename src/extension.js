@@ -155,7 +155,7 @@ async function generateSummary(text) {
       {
         type: "tl;dr",
         format: "plain-text",
-        length: "medium"
+        length: "long"
       },
       (message, progress) => {
         console.log(`${message} (${progress.loaded}/${progress.total})`);
@@ -195,6 +195,11 @@ async function createSummarizer(config, downloadProgressCallback) {
 
 // The summary text is then put inside of the innerHTML portion of the summary element
 async function showSummary(text) {
+  var div = document.getElementById(':1')
+  div.insertAdjacentHTML(
+    "afterbegin",
+    '<p>AI Summary: </p> <p>'+text+'</p>'
+  );
   console.log(text)
   // summaryElement.innerHTML = DOMPurify.sanitize(marked.parse(text));
 }
