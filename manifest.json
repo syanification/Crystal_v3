@@ -1,11 +1,10 @@
 {
     "manifest_version": 3,
-    "name": "Crystal_v3",
+    "name": "Crystal",
     "short_name": "Crystal",
     "version": "0.1",
     "author": "Riley Roberts <syanification@gmail.com>",
-
-    "description": "A minimal extension which demonstrates how to create a extension with Gmail.JS and NodeJS-based bundling.",
+    "description": "The AI Powered Inbox Helper",
     "trial_tokens": [
     "At0F5YUbwQ8HfXYQLsW3HvYi4U3HvnHBBVZ56ZA/HB5Mp9A3Qckk2+dHnR0FYO/kEDQMt9Qa2f3uFaRdPyzBnwMAAABzeyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8va2VsaGRka2lrbmtjZGpqa2ZiZ2pmZmVhZGVpYm5mYm0iLCJmZWF0dXJlIjoiQUlTdW1tYXJpemF0aW9uQVBJIiwiZXhwaXJ5IjoxNzUzMTQyNDAwfQ=="
     ],
@@ -30,5 +29,14 @@
     }],
     "host_permissions": [
         "https://*/*"
-    ]
+    ],
+    "action": {
+        "default_icon": {
+        "16": "images/icon16.png",
+        "32": "images/icon32.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+        },
+        "default_title": "Crystal"
+    }
 }
