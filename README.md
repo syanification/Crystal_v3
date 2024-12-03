@@ -31,7 +31,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo128.png" width="80" height="80">
+    <img src="images/icon128.png" width="80" height="80">
   </a>
 
   <h3 align="center">Crystal</h3>
@@ -41,7 +41,24 @@
     <br />
     <a href="https://github.com/syanification/Crystal_v3"><strong>Explore the project »</strong></a>
     <br />
-    <br />
+    
+<div>
+    <style>
+        .spinner-container {
+        display: flex; /* Ensure the spinner container uses flexbox */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        width: 100%;
+        height: 100%; /* Take the full height of the box */
+        position: relative;
+        }
+    </style>
+    <div id="summary" class="box">
+    <div class="spinner-container">
+       <div id="l4"></div>
+    </div>
+    </div>
+</div>
     <a href="https://www.youtube.com/watch?v=jwB-AQFcZHs">View Demo</a>
     ·
     <a href="https://github.com/syanification/Crystal_v3/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
@@ -79,20 +96,12 @@
 </details>
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Preview Screen Shot][product-screenshot]](https://github.com/syanification/Crystal_v3)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+Crystal uses the new onboard Gemini Summary API to deliver a summary of the users current inbox page. It's as simple as installing the extension and watching the magic happen!
 
 Use the `BLANK_README.md` to get started.
 
@@ -262,7 +271,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/preview.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
@@ -279,3 +288,84 @@ Use this space to list resources you find helpful and would like to give credit 
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+
+<style>
+  .spinner {
+    margin: 0; /* Remove default margin */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 100vh; /* Full viewport height */
+    background: #f0f0f0; /* Light background for contrast */
+  }
+
+  #l4 {
+    position: absolute; /* Use absolute positioning for precise control */
+    width: 20px; /* Fixed width */
+    height: 20px; /* Fixed height */
+    background: #1EE5CF; /* Main color */
+    border-radius: 15%; /* Slightly round the corners */
+    box-shadow: 0px 0px 60px 15px #1EE5CF; /* Glowing trail */
+    transform: translateX(-80px); /* Start position */
+    clip-path: inset(0); /* Ensure full visibility at start */
+    animation:
+      l4-1 1s ease-in-out infinite alternate,
+      l4-2 2s ease-in-out infinite;
+  }
+
+  @keyframes l4-1 {
+    100% {
+      transform: translateX(80px); /* Move horizontally */
+    }
+  }
+
+  @keyframes l4-2 {
+    33% {
+      clip-path: inset(0 0 0 -100px); /* Adjust clipping */
+    }
+    50% {
+      clip-path: inset(0 0 0 0); /* Full visibility */
+    }
+    83% {
+      clip-path: inset(0 -100px 0 0); /* Adjust clipping */
+    }
+  }
+  .box {
+            display: flex; /* Use flexbox for alignment */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            position: relative;
+            transform-style: preserve-3d;
+            border-radius: 8px;
+            margin: 20px auto; /* Center the div with some space around */
+            padding: 20px; /* Add space inside the div */
+            width: 80%; /* Adjust the width to leave room on the sides */
+            // font-family: Arial, sans-serif; /* Set an easy-to-read font */
+            font-size: 16px; /* Make the text legible */
+            line-height: 1.6; /* Improve readability with line spacing */
+            // color: #333; /* Set a neutral text color */
+            background-color: #ffffff; /* Add a light background for contrast */
+            border: 1px solid #ddd; /* Subtle border to define the div */
+            border-radius: 8px; /* Soften the edges */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a slight shadow for depth */
+          }
+
+          .box::before {
+            content: "";
+            position: absolute; 
+            inset: -2px;
+            background: linear-gradient(
+              180deg , 
+              #00FFFF, /* Bright cyan at the top */
+              #00E5FF, 
+              #00CCFF
+              /* Dark cyan at the bottom */
+            );
+            filter: blur(7px);
+            transform: translate3d(0px,0px,-1px);
+            border-radius: inherit;
+            pointer-events: none;
+          }
+</style>
+
+<!-- <div id="l4"></div> -->
