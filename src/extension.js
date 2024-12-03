@@ -204,21 +204,6 @@ async function summarizeInbox(inboxContent){
   showSummary(summary);
 }
 
-// function canBeParsed(document) {
-//   return isProbablyReaderable(document, {
-//     minContentLength: 100
-//   });
-// }
-
-// function parse(document) {
-//   if (!canBeParsed(document)) {
-//     return false;
-//   }
-//   const documentClone = document.cloneNode(true);
-//   const article = new Readability(documentClone).parse();
-//   return article.textContent;
-// }
-
 async function generateSummary(text) {
   try {
     const session = await createSummarizer(
@@ -270,22 +255,16 @@ async function showSummary(text) {
     <style>
     ${boxStyle}
     </style>
-  <div>
-    `+text+`
-  </div>
+    <div id="typingTarget"></div>
   `;
+
+  const typingTarget = document.getElementById('typingTarget');
+  typingTarget.innerHTML = ''; // Clear existing content
+
+  for (let i = 0; i < text.length; i++) {
+    typingTarget.innerHTML += text[i];
+    await new Promise(resolve => setTimeout(resolve, 15)); // Adjust typing speed (50ms per character)
+  }
+
   console.log(text);
-  // summaryElement.innerHTML = DOMPurify.sanitize(marked.parse(text));
 }
-
-// async function updateWarning(warning) {
-//   warningElement.textContent = warning;
-//   if (warning) {
-//     warningElement.removeAttribute('hidden');
-//   } else {
-//     warningElement.setAttribute('hidden', '');
-//   }
-// }
-
-// parse(window.document);
-
